@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Original Hand-Painted Art</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --accent:#b7d9e9;
+  --white:#ffffff;
+  --dark:#1f2933;
+  --muted:#6b7280;
+  --border:rgba(183,217,233,0.6);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,sans-serif;
+  background:var(--white);
+  color:var(--dark);
+  line-height:1.7;
+}
+h1,h2,h3{font-family:Playfair Display,serif}
+section{padding:90px 6%}
+
+/* buttons */
+.btn{
+  padding:14px 28px;
+  border-radius:6px;
+  font-size:.95rem;
+  text-decoration:none;
+  cursor:pointer;
+  transition:.3s;
+  display:inline-block;
+}
+.btn-primary{
+  background:var(--accent);
+  color:var(--dark);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.1)}
+.btn-outline{
+  border:1px solid var(--accent);
+  color:var(--dark);
+}
+.btn-outline:hover{background:var(--accent)}
+
+/* hero */
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  background:linear-gradient(120deg,rgba(183,217,233,.2),#fff 65%);
+}
+.hero-content{max-width:720px}
+.hero h1{font-size:clamp(2.4rem,5vw,3.6rem);margin-bottom:20px}
+.hero p{max-width:620px;margin-bottom:34px;color:var(--muted)}
+.cta{display:flex;gap:16px;flex-wrap:wrap}
+
+/* features */
+.features-grid{
+  margin-top:50px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+}
+.feature{
+  padding:32px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  transition:.35s;
+}
+.feature:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 34px rgba(0,0,0,.07);
+}
+
+/* gallery */
+.gallery-grid{
+  margin-top:50px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.art-card{
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  transition:.35s;
+}
+.art-card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.08)}
+.art-card img{
+  width:100%;
+  border-radius:10px;
+  margin-bottom:14px;
+}
+.price{font-weight:500;margin:8px 0}
+.status{font-size:.8rem;color:var(--muted)}
+
+/* WhatsApp buy button */
+.whatsapp-btn{
+  margin-top:14px;
+  display:inline-block;
+  padding:12px 22px;
+  border-radius:6px;
+  font-size:0.9rem;
+  text-decoration:none;
+  background:#25D366;
+  color:#ffffff;
+  transition:0.3s;
+}
+.whatsapp-btn:hover{
+  background:#1ebe5d;
+  transform:translateY(-2px);
+}
+
+/* commission */
+.commission{background:rgba(183,217,233,.18)}
+.form{
+  margin-top:30px;
+  display:grid;
+  gap:16px;
+  max-width:600px;
+}
+input,textarea{
+  padding:14px;
+  border-radius:6px;
+  border:1px solid rgba(0,0,0,.15);
+  font-family:inherit;
+}
+textarea{min-height:120px;resize:vertical}
+
+/* care */
+.care-grid{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  text-align:center;
+}
+
+/* closing */
+.closing{text-align:center;padding:110px 6%}
+.closing h2{font-size:2.3rem;margin-bottom:28px}
+
+/* socials */
+.socials{
+  display:flex;
+  justify-content:center;
+  margin-bottom:18px;
+}
+.socials a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:var(--dark);
+  padding:10px 18px;
+  border-radius:30px;
+  border:1px solid var(--border);
+  transition:.3s;
+}
+.socials a:hover{
+  background:var(--accent);
+  transform:translateY(-2px);
+}
+.socials img{
+  width:18px;
+  height:18px;
+}
+
+/* footer */
+footer{text-align:center;padding:30px;color:var(--muted);font-size:.85rem}
+
+/* animation */
+.reveal{opacity:0;transform:translateY(40px);transition:.8s}
+.reveal.active{opacity:1;transform:none}
+
+@media(max-width:768px){
+  section{padding:70px 6%}
+  .cta{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content reveal">
+    <h1>Original Hand-Painted Art That Brings Meaning to Your Walls</h1>
+    <p>Each artwork is one-of-a-kind, created slowly and thoughtfully to add warmth, emotion, and character to your space.</p>
+    <div class="cta">
+      <a href="#gallery" class="btn btn-primary">Explore Artworks</a>
+      <a href="#commission" class="btn btn-outline">Commission Custom Art</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <div class="reveal">
+    <h2>What You’ll Find Here</h2>
+    <p>Authentic, handcrafted art — never mass produced.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature reveal"><h3>Original Art</h3><p>No prints. Every piece is unique.</p></div>
+    <div class="feature reveal"><h3>Diverse Styles</h3><p>Abstract, spiritual, modern décor.</p></div>
+    <div class="feature reveal"><h3>Premium Materials</h3><p>Professional canvas & acrylics.</p></div>
+    <div class="feature reveal"><h3>Intentional Creation</h3><p>Inspired by calm and nature.</p></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="reveal">
+    <h2>Available Paintings</h2>
+    <p>Only one available per artwork.</p>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="art-card reveal"><img src="artworks/art1.jpg"><h3>Artwork 01</h3><p>Canvas · Acrylic</p><span class="price">₹18,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="artworks/art2.jpg"><h3>Artwork 02</h3><p>Canvas · Acrylic</p><span class="price">₹14,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="artworks/art3.jpg"><h3>Artwork 03</h3><p>Canvas · Acrylic</p><span class="price">₹12,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="artworks/art5.jpg"><h3>Artwork 04</h3><p>Canvas · Acrylic</p><span class="price">₹15,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="artworks/art6.jpg"><h3>Artwork 05</h3><p>Canvas · Acrylic</p><span class="price">₹16,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="artworks/art7.jpg"><h3>Artwork 06</h3><p>Canvas · Acrylic</p><span class="price">₹11,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="artworks/art8.jpg"><h3>Artwork 07</h3><p>Canvas · Acrylic</p><span class="price">₹17,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="artworks/art9.jpg"><h3>Artwork 08</h3><p>Canvas · Acrylic</p><span class="price">₹19,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="artworks/art10.jpg"><h3>Artwork 09</h3><p>Canvas · Acrylic</p><span class="price">₹20,000</span><span class="status">Available</span></div>
+  </div>
+</section>
+
+<!-- COMMISSION -->
+<section id="commission" class="commission">
+  <div class="reveal">
+    <h2>Custom Art, Made Just for You</h2>
+    <p>Tell me your idea and I’ll create a painting tailored to your space.</p>
+    <form class="form" id="commissionForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Preferred Size">
+      <textarea placeholder="Describe your idea or emotion"></textarea>
+      <button class="btn btn-primary">Send Request</button>
+    </form>
+  </div>
+</section>
+
+<!-- CARE -->
+<section>
+  <div class="reveal">
+    <h2>Care & Delivery</h2>
+  </div>
+  <div class="care-grid">
+    <div class="reveal"><strong>Secure Packaging</strong><p>Safe, protective shipping.</p></div>
+    <div class="reveal"><strong>Care Guide</strong><p>Preserve texture & color.</p></div>
+    <div class="reveal"><strong>Pan-India Shipping</strong><p>Delivered nationwide.</p></div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="reveal">
+    <h2>Let your walls speak art.</h2>
+    <a href="#gallery" class="btn btn-primary">View Artworks</a>
+  </div>
+</section>
+
+<footer>
+  <div class="socials">
+    <a href="https://www.instagram.com/paint_yur_thoughts?igsh=YTZ4aXc1ZzNqYWhr" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+      <span>@paint_yur_thoughts</span>
+    </a>
+  </div>
+  © 2025 Original Hand-Painted Art
+</footer>
+
+<script>
+/* reveal animation */
+const reveals=document.querySelectorAll('.reveal');
+function reveal(){
+  reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight-100)
+      el.classList.add('active');
+  });
+}
+window.addEventListener('scroll',reveal);
+reveal();
+
+/* commission form */
+document.getElementById("commissionForm").onsubmit=e=>{
+  e.preventDefault();
+  alert("Your request has been sent!");
+  e.target.reset();
+};
+
+/* WhatsApp auto button */
+const whatsappNumber = "917406083311"; // CHANGE THIS
+
+document.querySelectorAll(".art-card").forEach(card=>{
+  const title = card.querySelector("h3").innerText;
+  const msg = encodeURIComponent(`I'd like to buy your ${title}.`);
+  const link = `https://wa.me/${whatsappNumber}?text=${msg}`;
+
+  const btn = document.createElement("a");
+  btn.href = link;
+  btn.target = "_blank";
+  btn.className = "whatsapp-btn";
+  btn.innerText = "Buy via WhatsApp";
+
+  card.appendChild(btn);
+});
+</script>
+
+</body>
+</html>
