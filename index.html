@@ -175,9 +175,16 @@ textarea{min-height:120px;resize:vertical}
 /* footer */
 footer{text-align:center;padding:30px;color:var(--muted);font-size:.85rem}
 
-/* animation */
-.reveal{opacity:0;transform:translateY(40px);transition:.8s}
-.reveal.active{opacity:1;transform:none}
+/* reveal animation */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
 
 @media(max-width:768px){
   section{padding:70px 6%}
@@ -222,15 +229,15 @@ footer{text-align:center;padding:30px;color:var(--muted);font-size:.85rem}
   </div>
 
   <div class="gallery-grid">
-    <div class="art-card reveal"><img src="./art1.JPG"><h3>Artwork 01</h3><p>Canvas · Acrylic</p><span class="price">₹18,000</span><span class="status">Available</span></div>
-    <div class="art-card reveal"><img src="./art2.JPG"><h3>Artwork 02</h3><p>Canvas · Acrylic</p><span class="price">₹14,000</span><span class="status">Available</span></div>
-    <div class="art-card reveal"><img src="./art3.JPG"><h3>Artwork 03</h3><p>Canvas · Acrylic</p><span class="price">₹12,000</span><span class="status">Available</span></div>
-    <div class="art-card reveal"><img src="./art5.JPG"><h3>Artwork 04</h3><p>Canvas · Acrylic</p><span class="price">₹15,000</span><span class="status">Available</span></div>
-    <div class="art-card reveal"><img src="./art13.JPG"><h3>Artwork 05</h3><p>Canvas · Acrylic</p><span class="price">₹16,000</span><span class="status">Available</span></div>
-    <div class="art-card reveal"><img src="./art7.JPG"><h3>Artwork 06</h3><p>Canvas · Acrylic</p><span class="price">₹11,000</span><span class="status">Available</span></div>
-    <div class="art-card reveal"><img src="./art15.JPG"><h3>Artwork 07</h3><p>Canvas · Acrylic</p><span class="price">₹17,000</span><span class="status">Available</span></div>
-    <div class="art-card reveal"><img src="./art22.JPG"><h3>Artwork 08</h3><p>Canvas · Acrylic</p><span class="price">₹19,000</span><span class="status">Available</span></div>
-    <div class="art-card reveal"><img src="./art10.JPG"><h3>Artwork 09</h3><p>Canvas · Acrylic</p><span class="price">₹20,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="./art1.JPG" alt="Artwork 01"><h3>Artwork 01</h3><p>Canvas · Acrylic</p><span class="price">₹18,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="./art2.JPG" alt="Artwork 02"><h3>Artwork 02</h3><p>Canvas · Acrylic</p><span class="price">₹14,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="./art3.JPG" alt="Artwork 03"><h3>Artwork 03</h3><p>Canvas · Acrylic</p><span class="price">₹12,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="./art5.JPG" alt="Artwork 04"><h3>Artwork 04</h3><p>Canvas · Acrylic</p><span class="price">₹15,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="./art13.JPG" alt="Artwork 05"><h3>Artwork 05</h3><p>Canvas · Acrylic</p><span class="price">₹16,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="./art7.JPG" alt="Artwork 06"><h3>Artwork 06</h3><p>Canvas · Acrylic</p><span class="price">₹11,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="./art15.JPG" alt="Artwork 07"><h3>Artwork 07</h3><p>Canvas · Acrylic</p><span class="price">₹17,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="./art22.JPG" alt="Artwork 08"><h3>Artwork 08</h3><p>Canvas · Acrylic</p><span class="price">₹19,000</span><span class="status">Available</span></div>
+    <div class="art-card reveal"><img src="./art10.JPG" alt="Artwork 09"><h3>Artwork 09</h3><p>Canvas · Acrylic</p><span class="price">₹20,000</span><span class="status">Available</span></div>
   </div>
 </section>
 
@@ -244,7 +251,7 @@ footer{text-align:center;padding:30px;color:var(--muted);font-size:.85rem}
       <input type="email" placeholder="Email" required>
       <input type="text" placeholder="Preferred Size">
       <textarea placeholder="Describe your idea or emotion"></textarea>
-      <button class="btn btn-primary">Send Request</button>
+      <button type="submit" class="btn btn-primary">Send Request</button>
     </form>
   </div>
 </section>
@@ -272,7 +279,7 @@ footer{text-align:center;padding:30px;color:var(--muted);font-size:.85rem}
 <footer>
   <div class="socials">
     <a href="https://www.instagram.com/paint_yur_thoughts?igsh=YTZ4aXc1ZzNqYWhr" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
       <span>@paint_yur_thoughts</span>
     </a>
   </div>
@@ -280,45 +287,46 @@ footer{text-align:center;padding:30px;color:var(--muted);font-size:.85rem}
 </footer>
 
 <script>
-/* reveal animation */
-const reveals=document.querySelectorAll('.reveal');
-function reveal(){
-  reveals.forEach(el=>{
-    if(el.getBoundingClientRect().top<window.innerHeight-100)
-      el.classList.add('active');
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* reveal animation */
+  const reveals = document.querySelectorAll('.reveal');
+  const revealOnScroll = () => {
+    reveals.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+
+  /* commission form */
+  document.getElementById("commissionForm").onsubmit = e => {
+    e.preventDefault();
+    alert("Your request has been sent!");
+    e.target.reset();
+  };
+
+  /* WhatsApp auto button */
+  const whatsappNumber = "917406083311"; // CHANGE IF NEEDED
+
+  document.querySelectorAll(".art-card").forEach(card => {
+    const title = card.querySelector("h3").innerText;
+    const msg = encodeURIComponent(`I'd like to buy your ${title}.`);
+    const link = `https://wa.me/${whatsappNumber}?text=${msg}`;
+
+    const btn = document.createElement("a");
+    btn.href = link;
+    btn.target = "_blank";
+    btn.className = "whatsapp-btn";
+    btn.innerText = "Buy via WhatsApp";
+
+    card.appendChild(btn);
   });
-}
-window.addEventListener('scroll',reveal);
-reveal();
 
-/* commission form */
-document.getElementById("commissionForm").onsubmit=e=>{
-  e.preventDefault();
-  alert("Your request has been sent!");
-  e.target.reset();
-};
-
-/* WhatsApp auto button */
-const whatsappNumber = "917406083311"; // CHANGE THIS
-
-document.querySelectorAll(".art-card").forEach(card=>{
-  const title = card.querySelector("h3").innerText;
-  const msg = encodeURIComponent(`I'd like to buy your ${title}.`);
-  const link = `https://wa.me/${whatsappNumber}?text=${msg}`;
-
-  const btn = document.createElement("a");
-  btn.href = link;
-  btn.target = "_blank";
-  btn.className = "whatsapp-btn";
-  btn.innerText = "Buy via WhatsApp";
-
-  card.appendChild(btn);
 });
 </script>
 
 </body>
 </html>
-
-
-
-
